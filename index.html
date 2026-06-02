@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水元公園 撮影会プラン</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #2d4a3e;
+      --green-mid: #4a7c6f;
+      --green-light: #7aab9a;
+      --green-pale: #d4e8e1;
+      --cream: #f8f5ef;
+      --text-dark: #1e2d28;
+      --text-mid: #3d5c50;
+      --accent: #8b6f47;
+      --water-blue: #5b8fa8;
+      --iris-purple: #7b6fa8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+
+    /* ヘッダー */
+    .hero {
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 60%, var(--water-blue) 100%);
+      padding: 56px 32px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -30px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .hero-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--green-pale);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 6vw, 38px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    .hero h1 span {
+      font-weight: 600;
+      color: var(--green-pale);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .meta-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-pill .icon { font-size: 14px; }
+
+    /* メインコンテンツ */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* セクションタイトル */
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--green-deep);
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-pale);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* タイムライン */
+    .timeline-section {
+      margin-top: 36px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 48px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green-light), var(--green-pale));
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 0;
+      margin-bottom: 4px;
+      animation: fadeIn 0.5s ease both;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.05s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.15s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.25s; }
+    .timeline-item:nth-child(6) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(7) { animation-delay: 0.35s; }
+    .timeline-item:nth-child(8) { animation-delay: 0.4s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .time-col {
+      width: 96px;
+      flex-shrink: 0;
+      padding-top: 14px;
+      text-align: right;
+      padding-right: 16px;
+    }
+
+    .time-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--green-mid);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .dot-col {
+      width: 16px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      border: 2px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--green-light);
+      flex-shrink: 0;
+    }
+
+    .dot.highlight {
+      background: var(--iris-purple);
+      box-shadow: 0 0 0 2px var(--iris-purple);
+    }
+
+    .dot.water {
+      background: var(--water-blue);
+      box-shadow: 0 0 0 2px var(--water-blue);
+    }
+
+    .card {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-left: 14px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--green-pale);
+      box-shadow: 0 1px 4px rgba(45,74,62,0.06);
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 14px rgba(45,74,62,0.12);
+    }
+
+    .card.iris { border-left-color: var(--iris-purple); }
+    .card.water-card { border-left-color: var(--water-blue); }
+    .card.review { border-left-color: var(--accent); }
+
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
+    .tag-green { background: var(--green-pale); color: var(--green-deep); }
+    .tag-purple { background: #ede9f7; color: var(--iris-purple); }
+    .tag-blue { background: #e2eef5; color: var(--water-blue); }
+    .tag-orange { background: #f5ede2; color: var(--accent); }
+
+    /* テーマ・持ち物 */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    @media (max-width: 480px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    .info-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px 16px;
+      box-shadow: 0 1px 4px rgba(45,74,62,0.06);
+    }
+
+    .info-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--green-pale);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .info-list li:last-child { border-bottom: none; }
+
+    .info-list li::before {
+      content: '▸';
+      color: var(--green-light);
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    /* LINE案内 */
+    .line-section {
+      margin-top: 36px;
+    }
+
+    .line-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(45,74,62,0.06);
+      border-top: 3px solid #06c755;
+    }
+
+    .line-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: #06c755;
+      margin-bottom: 12px;
+    }
+
+    .line-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.85;
+      white-space: pre-line;
+    }
+
+    /* フッター */
+    .footer-note {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--green-light);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <div class="hero">
+    <div class="hero-label">写真サークル 撮影会</div>
+    <h1>水元公園<br><span>撮影会プラン</span></h1>
+    <div class="hero-meta">
+      <div class="meta-pill"><span class="icon">📍</span> JR金町駅 北口</div>
+      <div class="meta-pill"><span class="icon">🕙</span> 10:00 集合</div>
+      <div class="meta-pill"><span class="icon">📷</span> カメラ・スマホ歓迎</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- タイムライン -->
+    <div class="timeline-section">
+      <div class="section-title">🗓 当日の流れ</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">10:00</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card">
+            <div class="card-title">金町駅 集合</div>
+            <div class="card-desc">参加者確認・当日の流れを簡単にご説明します。</div>
+            <span class="card-tag tag-green">JR金町駅 北口</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">10:10〜10:30</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card">
+            <div class="card-title">水元公園へ移動</div>
+            <div class="card-desc">バスまたは徒歩で公園へ。約20分ほどです。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">10:30〜11:15</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card">
+            <div class="card-title">中央広場周辺</div>
+            <div class="card-desc">広い芝生、木々、人物を入れた風景撮影を楽しみます。</div>
+            <span class="card-tag tag-green">風景</span><span class="card-tag tag-green">人物</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">11:15〜12:00</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card">
+            <div class="card-title">メタセコイアの森</div>
+            <div class="card-desc">木漏れ日、並木、奥行きのある構図を意識して撮影します。</div>
+            <span class="card-tag tag-green">木漏れ日</span><span class="card-tag tag-green">奥行き</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">12:00〜12:40</span></div>
+          <div class="dot-col"><div class="dot highlight"></div></div>
+          <div class="card iris">
+            <div class="card-title">花菖蒲園周辺 🌸</div>
+            <div class="card-desc">6月は花菖蒲や紫陽花の撮影に最適です。色と光を楽しみましょう。</div>
+            <span class="card-tag tag-purple">花菖蒲</span><span class="card-tag tag-purple">紫陽花</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">12:40〜13:20</span></div>
+          <div class="dot-col"><div class="dot water"></div></div>
+          <div class="card water-card">
+            <div class="card-title">水辺エリア 💧</div>
+            <div class="card-desc">水面の反射、野鳥、水辺の風景を撮影します。</div>
+            <span class="card-tag tag-blue">水面反射</span><span class="card-tag tag-blue">野鳥</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">13:20〜13:50</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card review">
+            <div class="card-title">ミニ講評・交流</div>
+            <div class="card-desc">お気に入りの写真を見せ合い、感想を交流します。</div>
+            <span class="card-tag tag-orange">講評</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time-col"><span class="time-text">14:00頃</span></div>
+          <div class="dot-col"><div class="dot"></div></div>
+          <div class="card">
+            <div class="card-title">解散</div>
+            <div class="card-desc">現地解散、または金町駅周辺で昼食交流も可能です。</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- テーマ・持ち物 -->
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">📷 撮影テーマ</div>
+        <ul class="info-list">
+          <li>初夏の水辺</li>
+          <li>緑と木漏れ日</li>
+          <li>花菖蒲・紫陽花</li>
+          <li>人物を入れた風景</li>
+          <li>スマホでも楽しめる構図</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">🎒 持ち物</div>
+        <ul class="info-list">
+          <li>カメラまたはスマートフォン</li>
+          <li>飲み物</li>
+          <li>帽子・日よけ対策</li>
+          <li>歩きやすい靴</li>
+          <li>雨具（天候により）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LINE案内文 -->
+    <div class="line-section">
+      <div class="section-title">💬 LINE 案内文</div>
+      <div class="line-box">
+        <div class="line-label">LINE 用コピー文</div>
+        <div class="line-text">水元公園撮影会を行います。
+日時：○月○日（○）10:00
+集合：JR金町駅 北口
+初夏の水辺、メタセコイアの森、花菖蒲などを撮影します。
+カメラでもスマホでもお気軽にご参加ください。</div>
+      </div>
+    </div>
+
+    <div class="footer-note">写真サークル　水元公園撮影会</div>
+
+  </div>
+
+</body>
+</html>
